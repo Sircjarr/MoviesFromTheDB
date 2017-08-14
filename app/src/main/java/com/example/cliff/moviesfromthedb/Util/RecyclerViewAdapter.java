@@ -17,6 +17,14 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+/* The custom Adapter for the RecyclerViews
+   Why use a RecyclerView?
+        To display user-interface elements based on large data sets,
+        or data that frequently changes. For example, a music app might need to
+        display information about thousands of albums, but only a dozen of those
+        albums might be on-screen at a time.
+*/
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

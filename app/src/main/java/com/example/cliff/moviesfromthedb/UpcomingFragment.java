@@ -25,6 +25,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+// This fragment contains the logic for setting up the movie RecyclerView with the data from the API calls
+
 public class UpcomingFragment extends Fragment {
 
     private static final String TAG = "UpcomingFragment";
@@ -46,6 +48,7 @@ public class UpcomingFragment extends Fragment {
 
     public void setupListWithData() {
 
+        // Request a JSONObject with Volley
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, getCallURL(), null, new Response.Listener<JSONObject>() {
 
@@ -55,14 +58,14 @@ public class UpcomingFragment extends Fragment {
 
                             JSONArray ja = response.getJSONArray("results");
 
-                            // Setup the RecyclerView
+                            // Create the movieList
                             ArrayList<Movie> movieList = new ArrayList<>();
-
                             for (int i = 0; i < ja.length(); i++) {
                                 JSONObject movie = ja.getJSONObject(i);
                                 movieList.add(new Movie(movie.getString("title"), movie.getString("poster_path"), movie.getString("overview"), movie.getString("release_date")));
                             }
 
+                            // Set the custom adapter for the RecyclerView
                             RecyclerViewAdapter adapter = new RecyclerViewAdapter(movieList);
                             recyclerView.setAdapter(adapter);
 
@@ -81,6 +84,7 @@ public class UpcomingFragment extends Fragment {
                     }
                 });
 
+        // Make Volley API call by putting the JsonObjectRequest object in a RequestQueue
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.add(jsObjRequest);
     }
