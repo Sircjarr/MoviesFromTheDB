@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_content">
+
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:id="@+id/ivPoster">
+        </ImageView>
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/progressBar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ivPoster"
+            android:layout_toEndOf="@+id/ivPoster"
+            android:layout_marginTop="8dp">
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTitle"
+            tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteX="150dp"
+            android:gravity="start"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvReleaseDate"
+            android:layout_below="@+id/tvTitle"
+            tools:layout_editor_absoluteY="83dp"
+            tools:layout_editor_absoluteX="150dp"
+            android:gravity="start"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:textSize="12sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvOverview"
+            android:layout_below="@+id/tvReleaseDate"
+            tools:layout_editor_absoluteY="110dp"
+            tools:layout_editor_absoluteX="150dp"
+            android:gravity="start"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+</RelativeLayout>
